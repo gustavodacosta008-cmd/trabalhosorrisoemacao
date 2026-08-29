@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Você Cairia Nesse Golpe?</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         TELA INICIAL
+         ===================================== -->
+
+    <div id="tela-inicial" class="tela">
+
+        <div class="inicio">
+
+            <div class="icone-golpe">
+                🛡️
+            </div>
+
+            <h1>
+                Você Cairia<br>
+                Nesse Golpe?
+            </h1>
+
+            <p class="subtitulo">
+                Teste sua capacidade de identificar
+                golpes em situações do dia a dia.
+            </p>
+
+
+            <div class="aviso">
+
+                <strong>⚠️ Simulação educativa</strong>
+
+                <p>
+                    Esta experiência é fictícia.
+                    Não informe dados pessoais,
+                    senhas ou códigos reais.
+                </p>
+
+            </div>
+
+
+            <button
+    class="botao-iniciar"
+    onclick="mostrarCenarios()"
+>
+    Começar simulação
+</button>
+
+
+            <p class="creditos">
+                Projeto de extensão — ADS
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- =====================================
+     TELA DE CENÁRIOS
+     ===================================== -->
+
+<div
+    id="tela-cenarios"
+    class="tela"
+    style="display: none;"
+>
+
+    <div class="cenarios">
+
+        <div class="icone-golpe">
+            🎯
+        </div>
+
+        <h1>
+            Escolha uma situação
+        </h1>
+
+        <p class="subtitulo">
+            Escolha um cenário e veja se você
+            conseguiria identificar os sinais de golpe.
+        </p>
+
+
+        <div class="lista-cenarios">
+
+            <button
+    class="botao-voltar-inicio"
+    onclick="voltarParaInicio()"
+>
+    ← Voltar para o início
+</button>
+
+
+            <!-- Falso Banco -->
+
+            <button
+                class="cenario disponivel"
+                onclick="selecionarGolpe('banco')"
+            >
+
+                <span class="cenario-icone">
+                    🏦
+                </span>
+
+                <span class="cenario-texto">
+
+                    <strong>
+                        Falso banco
+                    </strong>
+
+                    <small>
+                        Uma suposta equipe de segurança
+                        entra em contato.
+                    </small>
+
+                </span>
+
+                <span class="seta">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- Falso Pacote -->
+
+            <button
+    class="cenario disponivel"
+    onclick="selecionarGolpe('pacote')"
+>
+
+    <span class="cenario-icone">
+        📦
+    </span>
+
+    <span class="cenario-texto">
+
+        <strong>
+            Falso pacote
+        </strong>
+
+        <small>
+            Uma suposta transportadora
+            entra em contato.
+        </small>
+
+    </span>
+
+    <span class="seta">
+        →
+    </span>
+
+</button>
+
+
+            <!-- Falso Familiar -->
+
+           
+            <button
+    class="cenario disponivel"
+    onclick="selecionarGolpe('familiar')"
+>
+
+    <span class="cenario-icone">
+        👨‍👩‍👦
+    </span>
+
+    <span class="cenario-texto">
+
+        <strong>
+            Falso familiar
+        </strong>
+
+        <small>
+            Alguém diz ser um familiar usando um número novo.
+        </small>
+
+    </span>
+
+    <span class="seta">
+        →
+    </span>
+
+</button>
+
+            <!-- Falsa vaga -->
+
+           <button
+    class="cenario disponivel"
+    onclick="selecionarGolpe('emprego')"
+>
+    <span class="cenario-icone">💼</span>
+
+    <span class="cenario-texto">
+        <strong>Falsa vaga de emprego</strong>
+        <small>Um suposto recrutador oferece uma oportunidade boa demais.</small>
+    </span>
+
+    <span class="seta">→</span>
+</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- =====================================
+         APLICATIVO / CONVERSA
+         ===================================== -->
+
+    <div
+        id="aplicativo"
+        class="app"
+        style="display: none;"
+    >
+
+        <!-- Cabeçalho -->
+
+        <header class="chat-header">
+
+            <<div class="avatar">
+    <img id="avatar-contato" src="" alt="Foto de perfil">
+</div> 
+
+            <div class="contact-info">
+
+                <h2>
+                    Segurança Digital
+                </h2>
+
+                <span>
+                    online
+                </span>
+
+            </div>
+
+            <div class="progresso">
+
+    Decisão <span id="numero-decisao">0</span>
+
+</div>
+
+<div class="simulacao-label">
+
+    🛡️ SIMULAÇÃO
+
+</div>
+
+        </header>
+
+    <div class="nome-cenario">
+    Cenário: <strong id="nome-do-cenario">---</strong>
+</div>
+
+
+<!-- Conversa -->
+
+<main class="chat">
+
+</main>
+
+
+<!-- Opções -->
+
+<section class="options">
+
+</section>
+
+</div>
+
+    <script src="data/golpes.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>

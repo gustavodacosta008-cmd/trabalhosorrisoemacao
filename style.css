@@ -1,0 +1,996 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111b21;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+
+/* Aplicativo */
+
+.app {
+    width: 100%;
+    max-width: 600px;
+    height: 800px;
+
+    background: #efeae2;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Cabeçalho */
+
+.chat-header {
+    height: 70px;
+
+    background: #202c33;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px 15px;
+}
+
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.contact-info h2 {
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.contact-info span {
+    font-size: 13px;
+    color: #aebac1;
+}
+
+
+/* Área da conversa */
+
+.chat {
+
+    /* SUAS CONFIGURAÇÕES ATUAIS CONTINUAM AQUI */
+
+    background-image:
+        url("assets/fundos/chat-background.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: local;
+
+    flex: 1;
+
+    padding: 25px 20px;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/* Mensagens */
+
+.message {
+    max-width: 75%;
+
+    padding: 10px 13px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+    line-height: 1.4;
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+
+.received {
+    align-self: flex-start;
+
+    background: white;
+
+    border-top-left-radius: 2px;
+}
+
+
+.sent {
+    align-self: flex-end;
+
+    background: #d9fdd3;
+
+    border-top-right-radius: 2px;
+}
+
+
+/* Área das opções */
+
+.options {
+    background: #202c33;
+
+    padding: 15px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+
+/* Botões */
+
+.options button {
+    border: none;
+
+    padding: 13px;
+
+    border-radius: 8px;
+
+    background: #25d366;
+
+    color: #111;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.options button:hover {
+    background: #20bd5a;
+
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   RESULTADO
+   ========================================== */
+
+.resultado {
+    background: white;
+
+    margin: 15px 5px;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+    text-align: center;
+}
+
+
+.resultado h2 {
+    margin-bottom: 10px;
+}
+
+
+.resultado p {
+    line-height: 1.5;
+
+    color: #444;
+
+    margin-bottom: 15px;
+}
+
+
+.resultado-seguro {
+    border-left: 6px solid #25d366;
+}
+
+
+.resultado-atencao {
+    border-left: 6px solid #f0ad00;
+}
+
+
+.resultado-perigo {
+    border-left: 6px solid #e53935;
+}
+
+
+/* Pontuação */
+
+.pontuacao {
+    font-size: 18px;
+
+    margin: 20px 0;
+}
+
+
+/* Histórico */
+
+.historico {
+    text-align: left;
+
+    margin-top: 15px;
+}
+
+
+.decisao {
+    background: #f1f1f1;
+
+    padding: 10px;
+
+    margin-bottom: 7px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+}
+
+
+.decisao span {
+    float: right;
+
+    font-weight: bold;
+}
+
+
+/* Botão reiniciar */
+
+.reiniciar {
+    margin-top: 20px;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    background: #25d366;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+.reiniciar:hover {
+    background: #20bd5a;
+}
+
+/* ==========================================
+   TELA INICIAL
+   ========================================== */
+
+.tela {
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+.inicio {
+
+    width: 100%;
+    max-width: 500px;
+
+    background: #202c33;
+
+    padding: 45px 35px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    color: white;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.5);
+
+}
+
+
+.icone-golpe {
+
+    font-size: 60px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.inicio h1 {
+
+    font-size: 36px;
+
+    line-height: 1.1;
+
+    margin-bottom: 18px;
+
+}
+
+
+.subtitulo {
+
+    color: #cfd8dc;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* Aviso */
+
+.aviso {
+
+    background: #111b21;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.aviso strong {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+}
+
+
+.aviso p {
+
+    color: #b0bec5;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+}
+
+
+/* Botão */
+
+.botao-iniciar {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    background: #25d366;
+
+    color: #111;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.botao-iniciar:hover {
+
+    transform: translateY(-2px);
+
+    background: #20bd5a;
+
+}
+
+
+.creditos {
+
+    margin-top: 25px;
+
+    color: #78909c;
+
+    font-size: 12px;
+
+}
+
+/* ==========================================
+   TELA DE CENÁRIOS
+   ========================================== */
+
+#tela-cenarios {
+    background: #111b21;
+}
+
+
+.cenarios {
+
+    width: 100%;
+    max-width: 550px;
+
+    background: #202c33;
+
+    padding: 40px 30px;
+
+    border-radius: 18px;
+
+    color: white;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+
+.cenarios h1 {
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+
+.lista-cenarios {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+/* Botão de cenário */
+
+.cenario {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+/* Disponível */
+
+.cenario.disponivel {
+
+    background: #25d366;
+
+    color: #111;
+}
+
+
+.cenario.disponivel:hover {
+
+    transform: translateY(-2px);
+
+    background: #20bd5a;
+}
+
+
+/* Bloqueado */
+
+.cenario.bloqueado {
+
+    background: #111b21;
+
+    color: #78909c;
+
+    cursor: not-allowed;
+
+    opacity: 0.7;
+}
+
+
+/* Ícone */
+
+.cenario-icone {
+
+    font-size: 30px;
+
+    width: 50px;
+
+    text-align: center;
+
+    margin-right: 12px;
+}
+
+
+/* Texto */
+
+.cenario-texto {
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+}
+
+
+.cenario-texto strong {
+
+    font-size: 16px;
+
+    margin-bottom: 4px;
+}
+
+
+.cenario-texto small {
+
+    font-size: 12px;
+
+    opacity: 0.8;
+
+    line-height: 1.3;
+}
+
+
+.seta {
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+
+.cadeado {
+
+    font-size: 18px;
+}
+
+/* ==========================================
+   INDICADOR DE DIGITAÇÃO
+   ========================================== */
+
+.typing {
+
+    align-self: flex-start;
+
+    background: white;
+
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    border-top-left-radius: 2px;
+
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+
+    color: #667781;
+
+    font-size: 14px;
+
+}
+
+
+.typing-dots {
+
+    display: inline-flex;
+
+    gap: 3px;
+
+}
+
+
+.typing-dots span {
+
+    width: 5px;
+
+    height: 5px;
+
+    background: #667781;
+
+    border-radius: 50%;
+
+    animation: digitando 1.2s infinite;
+
+}
+
+
+.typing-dots span:nth-child(2) {
+
+    animation-delay: 0.2s;
+
+}
+
+
+.typing-dots span:nth-child(3) {
+
+    animation-delay: 0.4s;
+
+}
+
+
+@keyframes digitando {
+
+    0%, 60%, 100% {
+
+        transform: translateY(0);
+
+        opacity: 0.4;
+
+    }
+
+    30% {
+
+        transform: translateY(-3px);    
+
+        opacity: 1;
+
+    }
+
+}
+
+/* ==========================================
+   HORÁRIO DAS MENSAGENS
+   ========================================== */
+
+.horario {
+
+    display: block;
+
+    text-align: right;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    color: #667781;
+
+}
+
+
+.sent .horario {
+
+    color: #5c7d55;
+
+}
+
+
+.checks {
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: -2px;
+
+}
+
+/* ==========================================
+   INDICADOR DE PROGRESSO
+   ========================================== */
+
+.progresso {
+
+    margin-left: auto;
+
+    font-size: 12px;
+
+    color: #aebac1;
+
+    white-space: nowrap;
+
+}
+
+/* ==========================================
+   IDENTIFICAÇÃO DA SIMULAÇÃO
+   ========================================== */
+
+.simulacao-label {
+
+    margin-left: 15px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    color: #25d366;
+
+    white-space: nowrap;
+
+    border: 1px solid #25d366;
+
+    padding: 4px 7px;
+
+    border-radius: 10px;
+
+}
+
+/* ==========================================
+   NOME DO CENÁRIO
+   ========================================== */
+
+.nome-cenario {
+
+    background: #d9fdd3;
+
+    color: #3b4a54;
+
+    text-align: center;
+
+    padding: 6px;
+
+    font-size: 11px;
+
+    border-bottom: 1px solid #c5d7c1;
+
+}
+
+/* ==========================================
+   RELATÓRIO FINAL
+   ========================================== */
+
+/* Nível de atenção */
+
+.nivel-atencao {
+
+    background: #f5f7f8;
+
+    padding: 14px;
+
+    margin: 15px 0;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    color: #3b4a54;
+
+}
+
+
+/* ==========================================
+   RESUMO DAS DECISÕES
+   ========================================== */
+
+.resumo-decisoes {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 8px;
+
+    margin: 18px 0;
+
+}
+
+
+.resumo-decisoes p {
+
+    background: #f5f7f8;
+
+    padding: 12px 6px;
+
+    border-radius: 10px;
+
+    margin: 0;
+
+    font-size: 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.resumo-decisoes strong {
+
+    font-size: 20px;
+
+    color: #111b21;
+
+}
+
+
+/* ==========================================
+   RECOMENDAÇÃO
+   ========================================== */
+
+.recomendacao {
+
+    background: #fff8e1;
+
+    border-left: 4px solid #f0ad00;
+
+    padding: 14px;
+
+    margin: 20px 0;
+
+    border-radius: 8px;
+
+    text-align: left;
+
+}
+
+
+.recomendacao h3 {
+
+    margin-bottom: 7px;
+
+    font-size: 15px;
+
+    color: #3b4a54;
+
+}
+
+
+.recomendacao p {
+
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #555;
+
+}
+
+
+/* ==========================================
+   TÍTULO DO HISTÓRICO
+   ========================================== */
+
+.resultado > h3 {
+
+    margin-top: 20px;
+
+    font-size: 16px;
+
+    color: #3b4a54;
+
+}
+
+
+/* ==========================================
+   MELHORIA DAS DECISÕES
+   ========================================== */
+
+.decisao {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+}
+
+
+.decisao span {
+
+    float: none;
+
+    margin-left: auto;
+
+    white-space: nowrap;
+
+}
+
+
+/* ==========================================
+   CELULAR
+   ========================================== */
+
+@media (max-width: 500px) {
+
+    .resumo-decisoes {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* ==========================================
+   BOTÃO VOLTAR PARA INÍCIO
+   ========================================== */
+
+.botao-voltar-inicio {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 12px;
+
+    border: 1px solid #3b4a54;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #aebac1;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.botao-voltar-inicio:hover {
+
+    background: #111b21;
+
+    color: white;
+
+    transform: translateY(-2px);
+
+}
